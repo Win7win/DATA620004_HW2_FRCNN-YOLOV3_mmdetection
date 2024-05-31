@@ -52,16 +52,24 @@ pip install torch==1.2.0
 ```
 
 ## 单张图片检测
+
 使用 `infer_single_pic.sh` 脚本进行单张图片检测。请确保正确设置图像路径、配置文件、权重文件和输出目录。示例命令：
+
 ```bash
 CUDA_VISIBLE_DEVICES=6 python ./demo/image_demo_try.py $image_path $config_file --weights $weights_file --out-dir $output_dir
 ```
 $image_path:检测图片路径
+
 $config_file：训练模型output中的config文件
+
 $weights_file：训练好的权重文件
+
 $output_dir：输出目录
+
 如果需要获取Faster R-CNN第一阶段的proposal boxes，请修改./mmdet/models/detectors/two_stage.py中，239-265行取消注释并修改路径
+
 对应代码为：
+
 ```bash
 import torch
 import mmcv
@@ -93,16 +101,24 @@ mmcv.imwrite(drawn_image, output_path)  # 保存图像
 
 ## 测试模型
 使用 `test_yolov3_single` 和 `test_frcnn_single` 脚本进行测试，命令如下：
+
 ```bash
 python tools/test.py $config_file $weights_file --out $output_dir_file --work-dir=$output_dir
 ```
 $config_file：训练模型output中的config文件
+
 $weights_file：训练好的权重文件
+
 $output_dir_file：测试输出的pkl文件
+
 $output_dir：输出目录
+
 如果需要记录验证集上的loss和mAP，请将config中的test数据改成vali，并且修改你的环境中mmengine包中的runner/loops.py文件
+
 修改里面的TestLoop函数
+
 参考如下，请根据你的模型灵活调整记录的loss类型，loss和mAP记录会保存到json文件里。
+
 ```bash
 @LOOPS.register_module()
 class TestLoop(BaseLoop):
@@ -232,7 +248,6 @@ class TestLoop(BaseLoop):
 ```
 
 ## 引用
-如果使用 mmdetection，请引用以下文章：
 ```bibtex
 @article{mmdetection,
   title   = {{MMDetection}: Open MMLab Detection Toolbox and Benchmark},
