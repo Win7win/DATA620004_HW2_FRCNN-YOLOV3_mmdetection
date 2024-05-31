@@ -1,0 +1,1 @@
+python tools/test.py ./output_yolo416/yolov3_d53_8xb8-ms-416-273e_coco.py  ./output_0528_yolo416/epoch_100.pth --out "./output_test_wyq_yolov3/out_100.pkl" --work-dir="./output_test_wyq_yolov3"

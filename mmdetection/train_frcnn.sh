@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=4 python ./tools/train.py ./configs/faster_rcnn/faster-rcnn_r50_fpn_2x_coco.py --work-dir ./output_frcnn2x

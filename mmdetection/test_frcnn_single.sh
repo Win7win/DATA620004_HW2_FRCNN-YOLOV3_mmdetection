@@ -1,0 +1,1 @@
+python tools/test.py ./output_frcnn2x/faster-rcnn_r50_fpn_2x_coco.py  ./output_0528_frcnn2x/epoch_24.pth --out "./output_test_wyq_frcnn/out_24.pkl" --work-dir="./output_test_wyq_frcnn"

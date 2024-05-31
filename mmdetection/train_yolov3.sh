@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=4 python ./tools/train.py ./configs/yolo/yolov3_d53_8xb8-ms-416-273e_coco.py --work-dir ./output_yolo416
